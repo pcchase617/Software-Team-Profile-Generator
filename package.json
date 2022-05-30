@@ -1,0 +1,26 @@
+{
+  "name": "software-team-profile-generator",
+  "version": "1.0.0",
+  "description": "Designing a generator that displays information about your team of software engineers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcchase617/Software-Team-Profile-Generator.git"
+  },
+  "keywords": [],
+  "author": "chase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pcchase617/Software-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/pcchase617/Software-Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
