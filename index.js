@@ -138,23 +138,24 @@ function createIntern() {
 
 function createCard(employee) {
   let employeeType = employee.getRole();
+  let imageCard = employee.getImage();
   var extraProperty = employeeType === "Manager"
     ? `<li>officeNumber: ${employee.getOfficeNumber()}</li>`
     : employeeType === "Engineer"
-    ? `<li>Github: ${employee.getGithub()}</li>`
+    ? `<a href = "https://github.com/${employee.getGithub()}" target = "_blank"><li>Github: ${employee.getGithub()}</li></a>`
     : `<li>School: ${employee.getSchool()}</li>`;
   return `
-        <div>
-            <h1>${employee.getName()}</h1>
-            <h2>${employeeType}</h2>
-            <ol> 
-            <li>${employee.getId()}</li>
-            <li>${employee.getEmail()}</li>
-            ${extraProperty}
-            </ol>
-            
-        </div>
-        `;
+  <div class="card" style="width: 18rem;">
+    <img src = ${imageCard}
+        class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">${employee.getName()}</h5>
+          <h5 class="card-text">${employeeType}</h5>
+          <p class="card-text">My id is >${employee.getId()}</p>
+          <a href = "mailto: ${employee.getEmail()}"> <p class="card-text">My email is ${employee.getEmail()}</p></a>
+          <p class="card-text">My school is ${extraProperty}</p>
+      </div>
+  </div>`;
 }
 
 function createHtml() {
@@ -162,13 +163,19 @@ function createHtml() {
     <!DOCTYPE html>
     <html lang="en">
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
     <body>
-        ${employees.map(createCard)} 
+      <div class="p-4">
+        <h1 class="text-center mb-5">EMPLOYEE DIRECTORY</h1>
+          <div class="container-fluid" style="display:flex; justify-content: space-evenly">          
+            ${employees.map(createCard)} 
+          </div>
+      </div>
     </body>
     </html>
     `;
