@@ -8,7 +8,7 @@ Repository: https://github.com/pcchase617/Software-Team-Profile-Generator
 Video Link: 
 
 Site Preview:
-
+![alt text](https://raw.githubusercontent.com/pcchase617/Software-Team-Profile-Generator/main/Employee%20Directory%20Deployed%20page.PNG)
 
 Requirements:
 
